@@ -1,0 +1,3 @@
+[zenoss.zenpacks]
+ZenPacks.ssv.OrgModeler = ZenPacks.ssv.OrgModeler
+

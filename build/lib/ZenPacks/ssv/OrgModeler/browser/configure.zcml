@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<configure     
+    xmlns:zope="http://namespaces.zope.org/zope"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    xmlns="http://namespaces.zope.org/browser">
+
+<!-- Event console JSON api -->
+    <include package="Products.ZenUtils.extdirect.zope" file="meta.zcml"/>
+    <include package="Products.ZenModel" file="permissions.zcml"/>
+
+
+    <resourceDirectory
+        name="OrgModeler"
+        directory="resources"
+    />
+
+
+    <!-- Define a new entry on the Action "gear cog wheel" menu
+         for the device list page
+    -->
+    <viewlet
+        name="OrgModeler-action-menu-item"
+        paths="/++resource++OrgModeler/js/OrgModeler.js"
+        weight="10"
+        manager="Products.ZenUI3.browser.interfaces.IJavaScriptSrcManager"
+        class="Products.ZenUI3.browser.javascript.JavaScriptSrcBundleViewlet"
+        permission="zope2.Public"
+        />
+
+<!--
+    <browser:directRouter
+        name="ModelingJob"
+        for="*"
+        namespace="Zenoss.remote"
+        class="..ModelingJob.runModeling"
+        permission="zenoss.ManageDevice"
+        />
+-->
+    <!-- Add a command window for showing ouput for a command run from an action menu
+         The name parameter ties in with the "target" field in the js handler
+         In the class field, .. takes you back to the ZenPack base directory where
+         there must be a file called command.py..........
+         which contains a class called MyPredefinedCommandView
+    <page
+        name="run_my_predefined_command"
+        for="*"
+        class="..command.MyPredefinedCommandView"
+        permission="zenoss.ManageDevice"
+        />
+
+    <browser:directRouter
+      name="device_router"
+      for="*"
+      class=".device.DeviceRouter"
+      class="..ModelingJob.runModeling"
+      namespace="Zenoss.remote"
+      timeout="180000"
+    />
+
+
+    -->
+
+</configure>
