@@ -11,7 +11,7 @@ Ext.ComponentMgr.onAvailable('context-configure-menu', function(config) {
             handler: function() {
             Zenoss.remote.runModeling.startModelingJob( uid, function(response) {
                                 if (response.success) {
-                                 Zenoss.message.success(_t('Add Device Job submitted. <a href="/zport/dmd/JobManager/jobs/{0}/viewlog">View Job Log</a>'), response.jobId);
+                                 Zenoss.message.success(_t('Add Device Job submitted. <a href="/zport/dmd/joblist#jobs:{0}">View Job Log</a>'), response.jobId);
                                 } 
             });
             }
