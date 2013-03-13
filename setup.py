@@ -3,7 +3,7 @@
 # or saved.  Do not modify them directly here.
 # NB: PACKAGES is deprecated
 NAME = "ZenPacks.ssv.OrgModeler"
-VERSION = "1.0"
+VERSION = "1.1"
 AUTHOR = "Serge Sergeev"
 LICENSE = "GPL"
 NAMESPACE_PACKAGES = ['ZenPacks', 'ZenPacks.ssv']
